@@ -7,7 +7,7 @@
 PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
   py::class_<GetGPUInfo>(m, "GetGPUInfo")
         .def(py::init<>())
-        .def("get_cuda", &GetGPUInfo::get_cuda);
+        .def("get_cuda", &GetGPUInfo::get_cuda); 
 }
 
 

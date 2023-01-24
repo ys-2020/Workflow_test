@@ -1,0 +1,32 @@
+# Ignore all files without extension
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+!Makefile
+!*.mtx
+!logs
+
+__pycache__
+mytest
+CUTLASS_fail
+old
+tune_tmp
+*.zip
+
+*.pyi
+*.csv
+*.o
+*.so
+*.a
+
+
+# vscode file
+.vscode
+build
+dist
+*.egg-info

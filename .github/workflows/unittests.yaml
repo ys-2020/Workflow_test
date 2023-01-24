@@ -1,0 +1,30 @@
+name: pybind tests
+
+on: [push, pull_request]
+
+
+jobs:
+  my-job:
+    name: pybindtests
+    runs-on: self-hosted
+    # container: # GPU jobs must run in a container
+      # image: nvidia/cuda:11.5.0-base-ubuntu18.04
+      # env:
+      #   NVIDIA_VISIBLE_DEVICES: ${{ env.NVIDIA_VISIBLE_DEVICES }} # GPU jobs must set this container env variable
+    steps:
+    - uses: actions/checkout@v2
+    - name: pybind_test
+      env:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        python setup.py install
+        python test.py
+
+## No need to install on self-hosted machine ##
+# sudo apt-get install libsparsehash-dev
+# pip install numpy
+# pip install tqdm
+# pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+# 
+# python setup.py bdist_wheel
+# pip install --force-reinstall dist/* 

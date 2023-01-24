@@ -14,10 +14,8 @@ setup(
     ext_modules=[
         CUDAExtension(name='workflowtest',
                       sources =
-                      [src+'pybind_test.cpp',src+'getcuda.cu'],
-                      extra_compile_args=extra_compile_args),
-                    
-                
+                      [src+'pybind_test.cpp'],
+                      extra_compile_args=extra_compile_args),                
     ],
     cmdclass={
         'build_ext': BuildExtension

@@ -1,11 +1,20 @@
 #include <torch/extension.h>
-#include "getcuda.h"
 #include<iostream>
 #include<cuda.h>
 #include<cuda_runtime.h>
 using namespace std;
 
-int get_cuda(){
+class GetGPUInfo {
+ private:
+  int nothing;
+ public:
+  GetGPUInfo(){
+    // do nothing (default)
+  };
+  ~GetGPUInfo() {
+    // do nothing (default)
+  };
+  int get_cuda(){
     int dev = 0;
     cudaDeviceProp devProp;
     cudaGetDeviceProperties(&devProp, dev);
@@ -14,4 +23,5 @@ int get_cuda(){
     cout << "max_threads_per_block:" << devProp.maxThreadsPerBlock << endl;
     cout << "max_shared_memory_per_block:" << devProp.sharedMemPerBlock << " Bytes" << endl;
     return 0;
-}
+  };
+};

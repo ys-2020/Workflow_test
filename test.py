@@ -9,3 +9,4 @@ if __name__ == "__main__":
             2 * 100, dtype=torch.int32, device="cuda"
         )
     hashmap = workflowtest.GPUHashTable(hashmap_keys, hashmap_vals)
+    print(hashmap)

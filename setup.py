@@ -9,10 +9,10 @@ extra_compile_args = {
 }
 
 setup(
-    name='Test_Encipher',
+    name='Test_Encryption',
     packages=find_packages(),
     ext_modules=[
-        CUDAExtension(name='test_encipher',
+        CUDAExtension(name='test_encryption',
                       sources =
                       [src+'pybind.cu'],
                       extra_compile_args=extra_compile_args),                

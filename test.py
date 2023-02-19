@@ -1,5 +1,5 @@
 import torch
-import test_encipher
+import test_encryption
 
-a = test_encipher.call_my_kernel()
+a = test_encryption.call_my_kernel()
 print(a)

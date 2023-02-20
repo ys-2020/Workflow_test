@@ -21,7 +21,6 @@ tune_tmp
 *.pyi
 *.csv
 *.o
-*.so
 *.a
 
 
